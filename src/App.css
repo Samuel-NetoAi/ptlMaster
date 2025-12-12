@@ -1,0 +1,305 @@
+/* ==================================================
+   BASE DO SITE
+================================================== */
+
+.section {
+  padding: 180px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 5;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #00c8ff;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px #009eff;
+}
+
+.section-text {
+  max-width: 800px;
+  margin: 20px auto 0;
+  opacity: 0.85;
+}
+
+/* ================================
+   GLITCH UNIVERSAL (para títulos)
+================================ */
+
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.glitch::before {
+  color: #ff0066;
+  transform: translate(-2px, -1px);
+  animation: glitchRed 0.22s infinite steps(2);
+}
+
+.glitch::after {
+  color: #00eaff;
+  transform: translate(2px, 1px);
+  animation: glitchBlue 0.22s infinite steps(2);
+}
+
+@keyframes glitchRed {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(-2px,1px); }
+  100% { transform: translate(0,-1px); }
+}
+
+@keyframes glitchBlue {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(2px,-1px); }
+  100% { transform: translate(1px,1px); }
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* SUBTÍTULO FUTURISTA — GLITCH MELHORADO */
+.hero-subtitle {
+  position: relative;
+  display: inline-block;
+
+  margin-top: 20px;
+  font-size: 2.6rem;
+  font-weight: 700;
+
+  color: #1ee7ff;
+
+  text-shadow:
+    0 0 8px #00cfff,
+    0 0 18px #00aaff,
+    0 0 28px rgba(0, 170, 255, 0.7);
+
+  animation: subtitleFadeIn 1.3s ease forwards;
+  opacity: 0;
+}
+
+@keyframes subtitleFadeIn {
+  0% { opacity: 0; transform: translateY(15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* === GLITCH MELHORADO === */
+.hero-subtitle.glitch::before,
+.hero-subtitle.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* Azul deslocado */
+.hero-subtitle.glitch::before {
+  color: #00eaff;
+  transform: translate(3px, 0);
+  animation: subGlitch1 2.2s infinite steps(2) alternate-reverse;
+}
+
+/* Rosa deslocado */
+.hero-subtitle.glitch::after {
+  color: #ff007b;
+  transform: translate(-3px, 0);
+  animation: subGlitch2 1.6s infinite steps(2) alternate;
+}
+
+@keyframes subGlitch1 {
+  0% { transform: translate(3px, 0); }
+  30% { transform: translate(1px, -1px); }
+  60% { transform: translate(4px, 1px); }
+  100% { transform: translate(3px, -1px); }
+}
+
+@keyframes subGlitch2 {
+  0% { transform: translate(-3px, 0); }
+  40% { transform: translate(-1px, 2px); }
+  70% { transform: translate(-4px, -1px); }
+  100% { transform: translate(-2px, 1px); }
+}
+
+/* ===================================================
+      CAIXA FUTURISTA — GRADIENTE + PROFUNDIDADE
+=================================================== */
+
+.hero-box {
+  margin: 0 auto;
+  margin-top: 40px;
+
+  width: 80%;
+  max-width: 900px;
+
+  padding: 55px 40px;
+  border-radius: 20px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(0, 140, 255, 0.18),
+    rgba(0, 10, 25, 0.85)
+  );
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(0, 190, 255, 0.35);
+
+  box-shadow:
+    0 0 16px rgba(0, 160, 255, 0.45),
+    inset 0 0 20px rgba(0, 100, 255, 0.18);
+
+  animation: heroBoxFloat 6s ease-in-out infinite;
+  position: relative;
+}
+
+/* movimento suave */
+@keyframes heroBoxFloat {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ===============================
+    SEÇÃO SOBRE MIM — VÍDEO
+=============================== */
+
+.sobre-section {
+  padding: 120px 0 160px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+
+/* Container com bordas futuristas */
+.sobre-video-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 200, 255, 0.25);
+
+  box-shadow:
+    0 0 25px rgba(0, 190, 255, 0.25),
+    inset 0 0 15px rgba(0, 150, 255, 0.15);
+}
+
+.sobre-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.85;
+}
+
+/* ===============================
+    TEXTO DA SEÇÃO
+=============================== */
+
+.sobre-box {
+  max-width: 900px;
+  margin: 40px auto 0;
+  padding: 40px 30px;
+  border-radius: 20px;
+
+  background: rgba(0, 25, 45, 0.55);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(0, 200, 255, 0.25);
+
+  box-shadow:
+    0 0 15px rgba(0, 190, 255, 0.25),
+    inset 0 0 25px rgba(0, 120, 255, 0.15);
+
+  animation: sobreFloat 6s ease-in-out infinite;
+}
+
+@keyframes sobreFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.sobre-text {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  line-height: 1.6;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* FOOTER ESTILO NAVBAR — TARJA PRETA */
+.footer {
+  width: 100%;
+  height: 120px; /* altura maior */
+  padding: 20px 40px;
+
+  background: black; /* igual navbar */
+  border-top: 1px solid rgba(0, 150, 255, 0.15);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  z-index: 9999;
+
+  box-shadow: 0 -4px 20px rgba(0, 200, 255, 0.08);
+}
+
+/* LINKS */
+.footer-links {
+  display: flex;
+  gap: 45px;
+}
+
+.footer-links a {
+  color: #cfeaff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: 500;
+
+  text-shadow: 0 0 6px #009eff;
+  transition: 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px #00c8ff;
+  transform: translateY(-2px);
+}
+
+
+.projetos-section {
+  margin-bottom: 260px; /* aumenta o espaço antes do footer */
+}
+
+.email-display {
+  color: #00d5ff;
+  font-size: 1.2rem;
+  text-shadow: 0 0 8px #009eff;
+  cursor: default;
+}
+

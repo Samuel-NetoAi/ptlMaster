@@ -1,0 +1,50 @@
+.sobre-box {
+  width: 80%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+  margin-top: 120px;
+  padding: 60px 50px;
+
+  border-radius: 20px;
+
+  background: linear-gradient(
+    160deg,
+    rgba(0, 140, 255, 0.08),
+    rgba(0, 20, 50, 0.55)
+  );
+
+  border: 1px solid rgba(0, 200, 255, 0.35);
+
+  box-shadow:
+    0 0 18px rgba(0, 170, 255, 0.35),
+    inset 0 0 12px rgba(0, 120, 255, 0.20);
+
+  backdrop-filter: blur(12px);
+
+  animation: sobreFloat 6s ease-in-out infinite;
+}
+
+@keyframes sobreFloat {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-4px); }
+  100% { transform: translateY(0px); }
+}
+
+.sobre-text {
+  font-size: 1.15rem;
+  color: #cfeaff;
+  line-height: 1.75;
+
+  max-width: 900px;
+  margin: 0 auto;
+
+  text-align: justify;      
+  text-justify: inter-word; 
+  text-align-last: center;  
+  
+  opacity: 0.92;
+
+  letter-spacing: 0.3px; 
+  word-spacing: 1px;
+}
